@@ -2,28 +2,39 @@ import React from 'react';
 
 export default function Card(props) {
     const { id, name, type, sprite, base } = props.poke
+
+
     return (
-        <div className="card">
-            <h1>{id}</h1>
-            <h4>{name.english}</h4>
-            <img src={sprite} alt="" />
-            <ul>
-                <li>{base.HP}</li>
-                <li>{base.Attack}</li>
-                <li>{base.Defense}</li>
-                <li>{base.Speed}</li>
+        <div className="courses-container"  >
+            <div className={`course`}>
+                <div className={`course-preview ${type[0]}`} >
+                    <h6>#{id}  {name.english}</h6>
+                    <img src={sprite} alt="" />
+                </div>
+                <div className="course-info">
+                    <h2>Habilidades</h2>
+                    <ul>
+                        <li>Salud: {base.HP}</li>
+                        <li>Atq: {base.Attack}</li>
+                        <li>Def: {base.Defense}</li>
+                        <li>Vel: {base.Speed}</li>
+                    </ul>
 
-                { iterar(base) }
-
-            </ul>
-            <h6>{type[0] }</h6>
-            <h6>{type[1] }</h6>
+                    <div className="tipos">
+                        <div className="btn-container">
+                            {type.map((e,index) => {
+                                return <button className={`btn1 ${e}`}   key={index}> {e} </button>
+                            })}
+                            {/* <button className="btn1">{type[0]}</button>
+                            <button className="btn2">{type[1]}</button> */}
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+
+ 
     )
 }
 
-const iterar = (base) => {
-    
-    
 
-}

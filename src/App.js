@@ -447,15 +447,23 @@ function App() {
   }
   function handelSerch(e) {
     let cap = e.target.value
-    cap = [...cap].map( (letra, index) => {if(index === 0){ return letra.toUpperCase()}else{ return letra}}).join("")
+    cap = [...cap]
+      .map((letra, index) => {
+        if (index === 0) { return letra.toUpperCase() }
+        else { return letra }
+      }).join("")
     return setSerch(cap)
   }
 
+
   return (
-    <div className="container">
+    <div className="container ">
       <div className="filters">
         <select onChange={handelType}>
-          {allTypes.map(type => { return <option value={type}>{type}</option> })}
+          {allTypes.map((type, index) => {
+            // console.log(index)
+            return <option value={type} key={type}>{type}</option>
+          })}
         </select>
       </div>
       <div className="filters">
@@ -467,10 +475,11 @@ function App() {
 
       
         {
-            // pokemon.filter( e => { return types === "Todos" ? true : e.type.includes(types) } ).filter(e => e.name.english.includes(serch).map(poke => <Card poke={poke} />)
             // eslint-disable-next-line no-unused-expressions
-            pokemon.filter( e => { return types === "Todos"? true : e.type.includes(types) } ).filter(e => e.name.english.includes(serch)).map( poke => { return <Card poke={poke} /> } )
-
+          pokemon
+            .filter(e => { return types === "Todos" ? true : e.type.includes(types) })
+            .filter(e => e.name.english.includes(serch))
+            .map((poke, i) => { return <Card key={i} poke={poke} /> })
         }
 
 

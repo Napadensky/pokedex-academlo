@@ -1,37 +1,206 @@
-.container{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 2em 0em;
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 2em 0em;
 }
 
 .App {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  column-gap: 40px;
-  row-gap: 20px;
-  padding: 0% 5%;
-  width: 85%;
+	/* display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	column-gap: 40px;
+	row-gap: 20px;
+	padding: 0% 5%;
+  width: 85%; */
+
+	display: grid;
+	grid-template-columns:1fr 1fr 1fr ;
+	column-gap: 40px;
+	row-gap: 10px;
+	/* padding: 0% 5%; */
+  width: 100%;
+
+  /* display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: auto;
+  max-width: 80%;
+  justify-content: center; */
+
+}
+@media (max-width: 700px) {
+	.App {
+		grid-template-columns: 1fr 1fr ;
+	}
+	@media (max-width: 595px) {
+		.App {
+			grid-template-columns: 1fr;
+		}
+	}
+	.types {
+		display: inline-block;
+		background-color: chocolate;
+		padding: 5px 10px;
+		margin-right: 10px;
+		color: #fff;
+		border-radius: 4px;
+	}
+
+	.filters {
+		margin: 10px;
+	}
+
+	.card {
+		display: flex;
+		flex-direction: column;
+		background-color: #7eb2f9;
+		justify-content: center;
+		align-items: center;
+		border-radius: 4px;
+	}
 }
 
-.types{
-  display: inline-block;
-  background-color: chocolate;
-  padding: 5px 10px;
-  margin-right: 10px;
-  color: #FFF;
-  border-radius: 4px;
+/* Componente */
+@import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
+body {
+	background-image: linear-gradient(45deg, #7175da, #9790f2);
+	font-family: "Muli", sans-serif;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	min-height: 100vh;
+	margin: 0;
 }
 
-.filters{
-  margin-bottom: 1em;
+* {
+	box-sizing: border-box;
 }
 
-.card{
-  display: flex;
-  flex-direction: column;
-  background-color: #7eb2f9;
-  justify-content: center;
-  align-items: center;
-  border-radius: 4px;
+.course {
+	background-color: #fff;
+	border-radius: 10px;
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+	display: flex;
+	max-width: 100%;
+	margin: 20px;
+	overflow: hidden;
 }
+@media (max-width: 700px) {
+	.course {
+		max-width: 250px;
+		flex-wrap: wrap;
+	}
+}
+@media (max-width: 320px) {
+	.course {
+		max-width: 250px;
+		height: 500px;
+	}
+}
+.course .course h6 {
+	opacity: 0.6;
+	margin: 0;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	margin-bottom: 10px;
+}
+@media (max-width: 500px) {
+	.course .course h6 {
+		text-align: center;
+	}
+}
+.course .course h2 {
+	letter-spacing: 1px;
+	margin: 10px 0;
+}
+.course img {
+	width: 5rem;
+	display: block;
+	margin: auto;
+}
+.course .course-preview {
+  /* background-color: #2a265f; */
+	color: #fff;
+	padding: 30px;
+	max-width: 250px;
+}
+@media (max-width: 700px) {
+	.course .course-preview {
+		width: 100%;
+	}
+}
+.course .course-info {
+	padding: 30px;
+	width: 100%;
+}
+@media (max-width: 700px) {
+	.course .course-info {
+		position: relative;
+		padding-top: 5px;
+		padding-bottom: 60px;
+	}
+}
+@media (max-width: 700px) {
+	.course .tipos {
+		margin: 10px;
+	}
+}
+.course .tipos .btn1 {
+	/* background-color: red; */
+	border: 0;
+	border-radius: 50px;
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+	color: #fff;
+	font-size: 0.8em;
+	padding: 12px 25px;
+	letter-spacing: 1px;
+	width: 100px;
+	margin: 10px;
+}
+.course .tipos .btn2 {
+	background-color: #2a265f;
+	border: 0;
+	border-radius: 50px;
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+	color: #fff;
+	font-size: 0.8em;
+	padding: 12px 25px;
+	letter-spacing: 1px;
+	width: 100px;
+	margin: 10px;
+}
+@media (max-width: 700px) {
+	.course .btn-container {
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		position: absolute;
+		bottom: 0;
+    right: 0;
+    
+	}
+}
+
+.Grass{
+  background-color: #157b3c;
+}
+.Poison{
+  background-color: #55277d;
+}
+.Fire{
+  background-color: #ab2521;
+}
+.Water{
+  background-color: #1048c6;
+}
+.Flying{
+  background-color: #4e6880;
+}
+.Bug{
+  background-color: #1b4823;
+}
+.Normal{
+  background-color: #694754;
+}
+
